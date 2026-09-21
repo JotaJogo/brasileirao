@@ -11,7 +11,7 @@ const [erro, setErro] = useState(null)
 useEffect(() => {
   async function carregarTabela() {
     try {
-      const resposta = await fetch('/api/v4/competitions/BSA/standings')
+      const resposta = await fetch('/api/standings')
 
       if (!resposta.ok) {
         throw new Error('Não foi possível carregar a tabela.')

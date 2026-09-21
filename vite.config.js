@@ -9,10 +9,10 @@ export default defineConfig(({ mode }) => {
 
     server: {
       proxy: {
-        '/api': {
+        '/api/standings': {
           target: 'https://api.football-data.org',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ''),
+          rewrite: () => '/v4/competitions/BSA/standings',
           headers: {
             'X-Auth-Token': env.FOOTBALL_DATA_TOKEN,
           },
